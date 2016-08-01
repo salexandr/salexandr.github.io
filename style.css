@@ -1,0 +1,140 @@
+
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background: url('img/fon.jpg') no-repeat;
+    background-size: cover;
+	font:12px/18px Tahoma, Arial, Helvetica, sans-serif;	
+}
+
+.wrapper {
+	width: 875px;
+	margin: 25px auto;
+}
+
+.logo img:hover {
+	width: 400px;
+	margin: 60px 250px;
+	position: relative;
+}
+
+#menu{
+	width:900px;
+	height:59px;
+	background:url(img/menu_029_bg.png) no-repeat;
+}
+
+#menu ul{
+	list-style:none;
+	padding:0 25px;
+}
+
+#menu li{
+	list-style:none;
+	display:block;
+	float:left;
+	margin:0 2px;
+	height:59px;
+	line-height:59px;
+	vertical-align:middle;
+}
+
+#menu li a{
+	display:block;
+	float:left;
+	color:#897a5a;
+	text-transform:uppercase;
+	font-size:11px;
+	font-weight:bold;
+	padding:0 0 0 15px;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+#menu li a span{
+	display:block;
+	float:left;
+	color:#897a5a;
+	padding:0 30px 0 15px;
+}
+
+#menu li a:hover{
+	display:block;
+	float:left;
+	background:url(img/menu_029_l.png) no-repeat left;
+}
+
+#menu li a:hover span{
+	display:block;
+	float:left;					
+	color:#574622;
+	background:url(img/menu_029_r.png) no-repeat right;
+}
+
+#menu li a.current{
+	display:block;
+	float:left;
+	color:#574622;
+	text-transform:uppercase;
+	font-size:11px;
+	font-weight:bold;
+	background:url(img/menu_029_l.png) no-repeat left;
+	padding:0 0 0 15px;
+	text-decoration:none;
+}
+
+#menu li a.current span{					
+	display:block;
+	float:left;
+	background:url(img/menu_029_r.png) no-repeat right;
+	color:#574622;
+	padding:0 38px 0 18px;
+}
+
+.content {
+	width: 848px;
+	height: 500px;
+	margin: 0px auto;
+	background-color: rgba(186, 168, 128,.8);
+}
+
+.logo img{
+	margin: 60px 300px;
+	width: 300px;
+}
+
+.content h1 {
+    margin: 20px 200px;
+	color: #0e6aaa;
+	font-size: 35px;
+	text-shadow:3px 2px #c2c3f0;
+}
+
+.content h2 {
+    margin: 130px 60px;
+	color: #0e6aaa;
+	font-size: 35px;
+	text-shadow:3px 2px #c2c3f0;
+}
+
+.content2 {
+	width: 808px;
+	height: 460px;
+	margin: 0px auto;
+	background-color: rgba(186, 168, 128,.9);
+	padding: 20px;
+}
+
+.content2 h3 {
+	margin: 10px;
+	font-size: 18px;
+	color: #0e69a8;
+}
+
+.content2 p {
+	text-align: justify;
+	font-size: 14px;
+	color: #023b62;
+}
