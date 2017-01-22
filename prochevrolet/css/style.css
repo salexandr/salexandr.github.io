@@ -489,6 +489,10 @@ th {font-weight: bold;}
 .tabl-PS {
 	margin-top: 10px;
 }
+
+.tabl-768 {
+	line-height:25px;
+}
  
 .tablmodif480 {
     display: none;
@@ -536,6 +540,12 @@ th {font-weight: bold;}
     text-indent: 10px;
     line-height: 25px;
     font-size: 1.2em;
+}
+
+.ekspl__item {
+	margin-bottom: 10px;
+	list-style-type: circle;
+	text-align: left;
 }
 
 footer {
