@@ -293,7 +293,7 @@ h3 {
 .section__link {
 	display: block;
 	/*max-height: 14%;140px*/
-	margin: 40px 10px;
+	margin: 20px 10px;
 	background: linear-gradient(to bottom, #d0bd87, #eae1c9); /*#f2eddf #eae1c9 -color #d0bd87*/
 	border: 3px solid 	#c7b171;
 	border-radius: 7px;
