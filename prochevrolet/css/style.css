@@ -661,7 +661,7 @@ footer {
 	}
 	
     .menu {
-	    margin-left: 13.5%; /*6.5%*/
+	    margin-left: 6.5%; /*13.5%*/
     }	
 	
 	.main__nav {
@@ -680,7 +680,7 @@ footer {
 	}
 	
 	.submenu__item {
-	padding: 8px 3%; /*6.5*/		
+	padding: 8px 6.5%; /*3*/		
 	}
 	
 	.submenu2__lacetti {
@@ -699,6 +699,31 @@ footer {
     position: absolute;
     top: 116px;
     left: 228px;
+	}	
+}
+
+@media (max-width:730px) {
+	
+    .menu {
+	    margin-left: 13.5%; /*6.5%*/
+    }
+
+	.submenu__item {
+	padding: 8px 3%; /*6.5*/		
+	}	
+	
+	.advertising {
+		display: none;
+	}
+	
+	.section__item {
+	    display: block;
+	    vertical-align: top;
+	    width: 100%;	
+    }
+
+    .section__menu {
+    margin-left: 0.5%;
 	}	
 }
 
@@ -744,11 +769,7 @@ footer {
 		display: none;
 	}
 	
-	.section__item {
-	    display: block;
-	    vertical-align: top;
-	    width: 100%;	
-    }
+
 	
 	.menu {
 		display: none;
