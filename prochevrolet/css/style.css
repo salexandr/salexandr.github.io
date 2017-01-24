@@ -121,9 +121,9 @@ h3 {
 .menu__item {
 	display: inline-block;
     margin:0px;
-	padding: 13px 8%;
+	padding: 13px 7%;
 	transition:all 0.3s linear;
-	font-size: 1.4em; /*23px  65px*/
+	font-size: 1.4em; /*23px  65px 8%*/
     font-family: Roboto, sans-serif;	
 	float: left;
 }
@@ -661,7 +661,7 @@ footer {
 	}
 	
     .menu {
-	    margin-left: 6.5%;
+	    margin-left: 13.5%; /*6.5%*/
     }	
 	
 	.main__nav {
@@ -676,11 +676,11 @@ footer {
 	.submenu {
 	position: absolute;
     top: 50px;
-    left: 50px;	
+    left: 104px;	
 	}
 	
 	.submenu__item {
-	padding: 8px 6.5%;		
+	padding: 8px 3%; /*6.5*/		
 	}
 	
 	.submenu2__lacetti {
