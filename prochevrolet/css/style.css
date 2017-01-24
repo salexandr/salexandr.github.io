@@ -661,7 +661,7 @@ footer {
 	}
 	
     .menu {
-	    margin-left: 6.5%; /*13.5%*/
+	    margin-left: 9.5%; /*13.5%*/
     }	
 	
 	.main__nav {
@@ -676,55 +676,78 @@ footer {
 	.submenu {
 	position: absolute;
     top: 50px;
-    left: 104px;	
+    left: 73px;	
 	}
 	
 	.submenu__item {
-	padding: 8px 6.5%; /*3*/		
+	padding: 8px 5.5%; /*3*/		
 	}
 	
 	.submenu2__lacetti {
     position: absolute;
     top: 0px;
-    left: 228px;
+    left: 223px;
 	}
 	
 	.submenu2__aveo {
     position: absolute;
     top: 58px;
-    left: 228px;
+    left: 223px;
 	}
 
 	.submenu2__niva {
     position: absolute;
     top: 116px;
-    left: 228px;
+    left: 223px;
 	}	
 }
 
 @media (max-width:730px) {
 	
     .menu {
-	    margin-left: 13.5%; /*6.5%*/
+	    margin-left: 21.5%; /*6.5%*/
     }
 	
      .menu__item {
 	 padding: 13px 4%;
 	 }
+	 
+    .submenu {
+    position: absolute;
+    top: 50px;
+    left: 157px;
+    }	 
 
 	.submenu__item {
-	padding: 8px 3%; /*6.5*/		
+	padding: 8px 2%; /*6.5*/		
 	}	
 	
 	.advertising {
 		display: none;
 	}
 	
-
-
     .section__menu {
-    margin-left: 0.5%;
+    margin-left: 7.5%;
+	}
+
+    .submenu2__lacetti {
+    position: absolute;
+    top: 0px;
+    left: 207px;
+    }	
+	
+	.submenu2__aveo {
+    position: absolute;
+    top: 58px;
+    left: 207px;
+	}
+
+	.submenu2__niva {
+    position: absolute;
+    top: 116px;
+    left: 207px;
 	}	
+	
 }
 
 @media (max-width:480px) {
@@ -768,6 +791,10 @@ footer {
     .advertising {
 		display: none;
 	}
+	
+	.section__menu {
+    margin-left: 0.5%;
+    }
 	
 	.section__item {
 	    display: block;
