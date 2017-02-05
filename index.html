@@ -1,36 +1,189 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
+ <html lang="ru">
+ <head>
   <meta charset=utf-8>
-  <title>SoftSkills HomeWork2</title>
-  <!--[if lt IE 9]><script   src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta http-equiv="content-language" content="ru">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <title>Chevrolet. Информационно-справочный сайт. Модельный ряд.</title>
+  <meta name="description" content="Все о Chevrolet. Модельный ряд. О новых моделях Шевроле: описание, модификации, характеристики, регламенты ТО, тюнинг, руководства по эксплуатации и ремонту."/>
+  <meta name="keywords" content="chevrolet, шевроле, компания, модели, новости, история, lacetti, aveo, карта сайта"/>  
+  <meta property="og:title" content="Все о Chevrolet">
+  <meta property="og:description" content="Информационно-справочный сайт">
+  <meta property="og:image" content="http://prochevrolet.info/img/smm.jpg">
+  <meta property="og:url" content="http://prochevrolet.info">
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="Prochevrolet.info">
+  <meta name="twitter:title" content="Все о Chevrolet">
+  <meta name="twitter:description" content="Информационно-справочный сайт">
+  <meta name="twitter:image:src" content="http://prochevrolet.info/img/smm.jpg">
+  <meta name="twitter:domain" content="prochevrolet.info">
+  <meta name="twitter:image:alt" content="Сайт Шевролет">
+  <meta itemprop="name" content="Все о Chevrolet">
+  <meta itemprop="description" content="Информационно-справочный сайт">
+  <meta itemprop="image" content="http://prochevrolet.info/img/smm.jpg"> 
+  <link rel="stylesheet" href="css/style.css"> 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+  <meta name="robots" content="index, follow">  
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> 
+ </head>
+ <body>
+     <header>
+	     <div class="hgroup">
+	         <div class="conteiner">
+		         <h2>информационно-справочный сайт</h2>
+			         <div class="hgroup__a"><img class="hgroup__img" src="img/logotip.png" alt="logotip"></div>
+				 <h1>proCHEVROLET.info</h1>
+		     </div>	 
+		 </div>
+         <nav class="point-menu" id="nav">
+	         <div class="conteiner">
+			 	 <div class="hamburger">
+				     <span></span>
+					 <span></span>
+					 <span></span>
+				 </div>
+				 <div class="hamburger__conteiner">
+					 <ul class="hamburger__menu">
+						 <li class="hamburger__item"><a class="menu__link disabled color__disabled" href="../index.html#nav">Модели</a></li>
+						 <li class="hamburger__item"><a class="menu__link" href="blog/articles.html#nav">Блог</a></li>
+						 <li class="hamburger__item"><a class="menu__link" href="sitemap.html#nav">Карта сайта</a></li>
+					 </ul>
+				 </div>
+                 <ul class="menu">
+                     <li class="menu__item">
+				         <a class="menu__link disabled" href="index.html#nav">Модели<span>▼</span></a>
+				         <ul class="submenu">
+					         <li class="submenu__item submenu__lacetti"><a class="menu__link" href="lacetti/lacetti.html#nav"><img class="submenu__img" src="img/lacetti-icon.png" alt="lacetti-icon">Lacetti</a>
+				                 <ul class="submenu2__lacetti">
+					                 <li class="submenu2__item"><a class="submenu2__link" href="lacetti/lacetti-sedan-modifikacii.html#nav">Модификации и характеристики</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="lacetti/chevrolet-lacetti-tuning.html#nav">Тюнинг</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="lacetti/chevrolet-lacetti-to.html#nav">Техническое обслуживание</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="lacetti/chevrolet-lacetti-ekspluataciya.html#nav">Руководство по эксплуатации</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="lacetti/chevrolet-lacetti-remont.html#nav">Руководство по ремонту</a></li>							 
+					             </ul>						 
+						     </li>
+					         <li class="submenu__item submenu__aveo"><a class="menu__link" href="aveo/aveo.html#nav"><img class="submenu__img" src="img/aveo-icon.png" alt="aveo-icon">Aveo</a>
+				                 <ul class="submenu2__aveo">
+					                 <li class="submenu2__item"><a class="submenu2__link" href="aveo/aveo-hatchback-modifikacii.html#nav">Модификации и характеристики</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="aveo/chevrolet-aveo-tuning.html#nav">Тюнинг</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="aveo/chevrolet-aveo-to.html#nav">Техническое обслуживание</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="aveo/chevrolet-aveo-ekspluataciya.html#nav">Руководство по эксплуатации</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="aveo/chevrolet-aveo-remont.html#nav">Руководство по ремонту</a></li>							 
+					             </ul>							 
+							 </li>
+					         <li class="submenu__item submenu__niva"><a class="menu__link" href="niva/niva.html#nav"><img class="submenu__img" src="img/niva-icon.png" alt="niva-icon">Niva</a>
+					             <ul class="submenu2__niva">
+					                 <li class="submenu2__item"><a class="submenu2__link" href="niva/niva-harakteristiki.html#nav">Модификации и характеристики</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="niva/chevrolet-niva-tuning.html#nav">Тюнинг</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="niva/chevrolet-niva-to.html#nav">Техническое обслуживание</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="niva/chevrolet-niva-ekspluataciya.html#nav">Руководство по эксплуатации</a></li>
+					                 <li class="submenu2__item"><a class="submenu2__link" href="niva/chevrolet-niva-remont.html#nav">Руководство по ремонту</a></li>							 
+					             </ul>							 
+							 </li>					 
+					     </ul>
+				     </li>
+                     <li class="menu__item"><a class="menu__link" href="blog/articles.html#nav">Блог</a></li>
+                     <li class="menu__item"><a class="menu__link" href="sitemap.html#nav">Карта сайта</a></li>
+                 </ul>
+		     </div>
+	     </nav>				 
+	 </header>
+     <div class="advertising">
+	     <div class="conteiner">
+		     <div class="advertising__content">
+		         <img src="img/banner728x90.jpg" alt="пример банера"> 
+		     </div>
+	     </div>
+	 </div>
+	 <section>
+	     <div class="conteiner">
+             <ul class="section__menu">
+			     <li class="section__item"><a class="section__link" href="lacetti/lacetti.html#nav"><img class="section__img" src="img/lacetti-icon.png" alt="lacetti-icon"><p class="section__p">Lacetti</p></a></li>
+			     <li class="section__item"><a class="section__link" href="aveo/aveo.html#nav"><img class="section__img" src="img/aveo-icon.png" alt="aveo-icon"><p class="section__p">Aveo</p></a></li>
+				 <li class="section__item"><a class="section__link" href="niva/niva.html#nav"><img class="section__img" src="img/niva-icon.png" alt="niva-icon"><p class="section__p">Niva</p></a></li>						 
+             </ul>	 
+	     </div>	 
+	 </section>
+     <div class="advertising">
+	     <div class="conteiner">
+		     <div class="advertising__content">
+		         <img src="img/banner728x90.jpg" alt="пример банера">
+			 </div>
+	     </div>	 
+	 </div>	
+     <footer>
+	     <div class="conteiner">	 
+             <ul class="footer__menu">
+		         <li class="footer__item"><a class="footer__link disabled footer__disabled" href="index.html#nav">Главная</a><p class="footer__p">(модели)</p></li>
+                 <li class="footer__item"><a class="footer__link" href="blog/articles.html#nav">Блог</a></li>
+                 <li class="footer__item"><a class="footer__link" href="sitemap.html#nav">Карта сайта</a></li>
+             </ul>
+			 <!--noindex-->
+			 <div class="footer-smm">
+			     <script type="text/javascript">(function() {
+                 if (window.pluso)if (typeof window.pluso.start == "function") return;
+                 if (window.ifpluso==undefined) { window.ifpluso = 1;
+                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                 s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                 s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                 var h=d[g]('body')[0];
+                 h.appendChild(s);
+                 }})();</script>
+                 <div class="pluso" data-background="transparent" data-options="big,square,line,horizontal,nocounter,theme=08" data-services="vkontakte,odnoklassniki,facebook,twitter,linkedin,google,email" data-url="http://prochevrolet.info" data-title="Все о Chevrolet" data-description="Вся информация о Chevrolet"></div>
+			 </div>
+             <div class="counters">
+                 <!--LiveInternet counter--><script type="text/javascript"><!--
+				document.write("<a href='//www.liveinternet.ru/click' "+
+				"target=_blank><img src='//counter.yadro.ru/hit?t22.6;r"+
+				escape(document.referrer)+((typeof(screen)=="undefined")?"":
+				";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+				screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+				";"+Math.random()+
+				"' alt='' title='LiveInternet: показано число просмотров за 24"+
+				" часа, посетителей за 24 часа и за сегодня' "+
+				"border='0' width='88' height='31'><\/a>")
+				//--></script><!--/LiveInternet--> 
+				
+				 <!-- Yandex.Metrika informer -->
+				<a href="https://metrika.yandex.ru/stat/?id=27461247&amp;from=informer"
+				target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/27461247/3_1_F4F5E2FF_D4D5C2FF_0_pageviews"
+				style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:27461247,lang:'ru'});return false}catch(e){}"/></a>
+				<!-- /Yandex.Metrika informer -->
 
-  <div class="wrapper">
-    <div id="menu">
-	  <ul>
-		<li><a href="#" class="current"><span>Главная</span></a></li>
-		<li><a href="int1.html"><span>Интервью 1</span></a></li>
-		<li><a href="int2.html"><span>Интервью 2</span></a></li>
-		<li><a href="int3.html"><span>Интервью 3</span></a></li>
-		<li><a href="int4.html"><span>Интервью 4</span></a></li>
-        <li><a href="int5.html"><span>Интервью 5</span></a></li>		
-	  </ul>
-    </div>
-	<div class="content">
-	  <div class="logo">
-	    <img src="img/logo.png">
-	  </div>
-      <h1>Soft Skills Home Work 2</h1>
-	  <h2>Интервью с сотрудниками IT компаний</h2>
-	</div>
-  </div>	
+				<!-- Yandex.Metrika counter -->
+				<script type="text/javascript">
+				(function (d, w, c) {
+					(w[c] = w[c] || []).push(function() {
+						try {
+							w.yaCounter27461247 = new Ya.Metrika({id:27461247,
+									clickmap:true,
+									trackLinks:true,
+									accurateTrackBounce:true});
+						} catch(e) { }
+					});
 
-</body>
-</html>
+					var n = d.getElementsByTagName("script")[0],
+						s = d.createElement("script"),
+						f = function () { n.parentNode.insertBefore(s, n); };
+					s.type = "text/javascript";
+					s.async = true;
+					s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+					if (w.opera == "[object Opera]") {
+						d.addEventListener("DOMContentLoaded", f, false);
+					} else { f(); }
+				})(document, window, "yandex_metrika_callbacks");
+				</script>
+				<noscript><div><img src="//mc.yandex.ru/watch/27461247" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+				<!-- /Yandex.Metrika counter -->
+				
+             </div>	
+			 <!--/noindex-->
+             <div class="copiryght">
+                 <img class="copiryght__img" src="img/copy.png" alt="copiryght"> 			 
+             </div>			 			 
+	     </div>	 
+     </footer>	 
+
+     <script src="js/script.js"></script>
+ </body>
+ </html>
+ 
