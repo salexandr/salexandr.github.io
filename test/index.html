@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html ng-app>
+    <head>
+        <title>Project</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>	 
+	    <link rel="stylesheet" href="css/reset.css">
+	    <link rel="stylesheet" href="css/style.css">
+	    <script src="js/script.js"></script>	
+    </head>
+    <body>
+	    <div class="wrapper">
+		    <h2 class="notes__h2">Заметки</h2>
+		    <div ng-controller="TodoCtrl">
+			    <span class="notes__count">Выделено {{remaining()}} из {{todos.length}}</span>
+			    <a class="batton__del" href="" ng-click="archive()">удалить</a>
+			    <ul class="notes">
+				    <li ng-repeat="todo in todos" class="background-{{todo.bgcolor}} notes_add clearfix">
+					    <input type="checkbox" ng-model="todo.done">					  
+					    <p class="done-{{todo.done}} notes_p_category">{{todo.contentCat}}</p>					  
+					    <a class="batton__redact" href="" ng-click="redact()">редактировать</a>					   
+						<ul class="notes_category notes_category_align">						   
+					        <li class="notes_item">
+					            <p class="done-{{todo.done}} notes_p_name">{{todo.contentName}}</p>
+					        </li>
+					        <li>						  
+					            <p class="done-{{todo.done}} notes__message">{{todo.contentMessage}}</p>	
+					        </li>
+					    </ul>						  
+				    </li>
+			    </ul>							  
+			    <div class="add-notes">
+				    <form ng-submit="addTodo()">				  
+					    <ul class="notes_category">
+						    <p class="notes_p">Категория:</p>
+						    <li class="notes_item">
+							    <select class="add-notes_category" ng-model="category">
+								    <option class="form__option" value="Без категории" selected>Без категории</option>
+								    <option class="form__option" value="Категория1">Категория1</option>
+								    <option class="form__option" value="Категория2">Категория2</option>
+								    <option class="form__option" value="Категория2">Категория2</option>
+								    <option class="form__option" value="Категория4">Категория4</option>
+								    <option class="form__option" value="Категория2">Категория5</option>
+								    <option class="form__option" value="Категория4">Категория6</option>									  
+							    </select>
+						    </li>
+						    <li>
+								<input type="text" ng-model="name"  size="20" placeholder="Название">
+						    </li>
+					    </ul>
+					    <textarea class="add-notes_message" ng-model="message" placeholder="Текст заметки"></textarea>
+					    <div class="wrapper-submit">
+					        <ul class="notes_category">
+						        <p class="notes_p">Цвет:</p>						  
+					            <li class="notes_item">
+					                <select ng-model="color">
+									    <option class="background-blue" value="blue">синий</option>
+									    <option class="background-red" value="red">красный</option>
+									    <option class="background-yellow" value="yellow">желтый</option>
+									    <option class="background-green" value="green">зеленый</option>
+									    <option class="background-brown" value="brown">коричневый</option>
+									    <option class="background-purple" value="purple">фиолетовый</option>										
+					                </select>	
+					            </li>
+					            <li>						  
+					                <input class="btn-primary" type="submit" value="добавить">
+					            </li>
+					        </ul>
+					    </div>
+				    </form>
+			    </div>
+		    </div>
+	    </div>
+    </body>
+</html>
+	
+
