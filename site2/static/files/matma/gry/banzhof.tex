@@ -1,0 +1,80 @@
+%Wzory Matematyczne
+\documentclass[9pt, letterpaper, notitlepage]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, polish]{babel}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newtheorem{mydef}{Definicja}
+%----------------------Marginesy------------
+\setlength{\textheight}{23.5cm}
+\setlength{\textwidth}{15.92cm}
+\setlength{\footnotesep}{5mm}
+\setlength{\footskip}{10mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headsep}{5mm}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2.5mm}
+%---------------------Podstawowe informacje-
+\title{Jak wyznaczać liczbę reprezentantów na podstawie populacji? Indeks siły Banzhofa.}
+\author{Jasiek Marcinkowski}
+%\institute{XIV LO im. Polonii Belgijskiej we Wrocławiu}
+%---------------------Początek dokumentu----
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\begin{abstract}
+		Problem ten poruszyłem na wykładzie, ale nie przygotowałem się wystarczająco, by przekonywująco przedstawić jego rozwiązanie. Tutaj spróbuję nadrobić tę zaległość.
+	\end{abstract}
+	
+	\section{Głos Krytyczny}
+		Stosowaliśmy analogię do wyborów na prezydenta Stanów Zjednoczonych. Jest ona słuszna, gdyż tam właśnie głosuje się dwustopniowo, elektorzy są wybierani większościowo (z jednego stanu wyjdą wyłącznie przedstawiciele jednej partii) oraz jest tylko dwójka liczących się kandydatów.
+		Rozpocznijmy od definicji:
+		\begin{mydef}
+			Głos Krytyczny to taki, który przesądza o wyniku głosowania.
+		\end{mydef}
+		Wprowadźmy oznaczenia: $\mathbb{S}$ - zbiór stanów (państw, akcjonariuszy), $q_i$ - liczba mieszkańców stanu o numerze $i$.
+		Niech $g(x)$ będzie liczbą głosów elektorskich wyłanianych ze stanu o $x$ mieszkańców. Ponadto niech $\sum\limits_{i \in \mathbb{S}}{g(q_i)}  = \omega$
+		
+		Poszukujemy takiej funkcji $g$, która zapewni nam, że mieszkaniec każdego stanu będzie miał taką samą szansę na bycie wyborcą krytycznym w wyborze prezydenta. 
+		
+		Żeby wyborca ze stanu $i$ miał głos krytyczny dla wyboru prezydenta, jego głos musi być krytyczny w wyborze elektorów $g(q_i)$, a następnie głosy tych elektorów muszą być krytyczne w głosowaniu na prezydenta. Prawdopodobieństwo, że jego głos będzie finalnie krytyczny jest więc iloczynem prawdopodobieństw, iż jego głos jest krytyczny dla wyboru elektorów i że elektorzy mają głos krytyczny w wyborze prezydenta.
+	\section{Etap pierwszy - wybór elektorów}
+		Żeby głos wyborcy w stanie o populacji n był krytyczny, głosy pozostałych muszą się podzielić po równo. dzieje się to $\dbinom{n}{\frac{n}{2}}$ razy na $2^n$ wszystkich rozkładów. Prawdopodobieństwo wynosi więc: \[ \frac{\dbinom{n}{\frac{n}{2}}}{2^n} \]
+		Do obliczenia go użyjemy wzoru Stirlinga:
+		\begin{equation}
+			n! = {\left( \frac{n}{\mathit{e}} \right)}^n \sqrt{2\pi n}
+		\end{equation}
+		i znanego dobrze:
+		\begin{equation}
+			\dbinom{n}{k} = \frac{n!}{k! * (n - k)!}
+		\end{equation}
+		Tak więc:
+		\[
+		 	\frac{\dbinom{n}{\frac{n}{2}}}{2^n} = \frac{ {\left( \frac{n}{\mathit{e}} \right)}^n \sqrt{2\pi n} }{ {\left[{\left( \frac{n}{2\mathit{e}} \right)}^{\frac{n}{2}} \sqrt{2\pi \frac{n}{2}} \right]}^2 * 2^{n}} = \frac{ {\left( \frac{n}{\mathit{e}} \right)}^n \sqrt{n} \sqrt{\pi} \sqrt{2} }{ {\left( \frac{n}{\mathit{e}} \right)}^n \frac{1}{2^n} \sqrt{n}^2 \sqrt{\pi}^2 * 2^{n}} = \frac{\sqrt{2}}{\sqrt{n} \sqrt{\pi}} \sim \frac{1}{\sqrt{n}}
+		\]
+	\section{Etap drugi - głosowanie elektorów}
+		Jak już wspominaliśmy $g(n)$ to liczba elektorów wyłonionych w rozważanym powyżej głosowaniu w stanie o $n$ mieszkańcach. Musimy powziąć założenie, że każde $g( q_i )$ jest małe w porównaniu z $\omega$.
+		Nasze $g( n )$  głosów okazuje się krytyczne we wszystkich sytuacjach, w których pozostałe $\omega - g( n)$ głosów rozkłada się między $\frac{\omega}{2} - g( n )$ do $\frac{\omega}{2}$, a analogicznego rozkładu w drugą stronę. Będzie to więc $\sum\limits_{i = \frac{\omega}{2} - g( n )}^{\frac{\omega}{2}}{\dbinom{\omega}{i}}$ (wszystkie $g( q_i)$ są na tyle niewielkie, że rozkłady będą bliskie Symbolowi Newtona).
+		
+		
+		Szacowanie sumy wartości tych Symboli Newtona może okazać się niezwykle trudne. Jednak dla odpowiednio dużego $\omega$ i niewielkiego $g( n )$ wszystkie składniki sumy są bardzo bliskie do $\dbinom{\omega}{\frac{\omega}{2}}$, więc poszukiwane przez nas prawdopodobieństwo, że $g( n )$ głosów elektorskich okaże się krytyczne jest proporcjonalne do $g(n)$. Będzie to $a * g( n )$, gdzie a jest stałą.
+	\section{Wnioski}
+		Skoro chcemy, by
+		\[
+			\forall i \in \mathbb{S} \\\ a * g( q_i ) * \frac{1}{\sqrt{q_i}} \sim 1
+		\]
+		czyli
+		\[
+			g( q_i ) * \frac{1}{\sqrt{q_i}} \sim 1
+		\]
+		to
+		\[
+			g( q_i ) \sim \sqrt{q_i}
+		\]
+
+
+\end{document}
