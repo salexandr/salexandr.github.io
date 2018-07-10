@@ -1,0 +1,343 @@
+\documentclass[8pt, brown]{beamer}
+%\usepackage{url}
+%\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+
+\usepackage{amssymb}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{fontenc}
+\usepackage{graphicx}
+\usepackage{color}
+
+\setbeamercovered{transparent}
+\setbeamertemplate{bibliography item}[text]
+
+
+\definecolor{darkmagenta}{rgb}{.5,0,.5}
+\definecolor{navyblue}{rgb}{0,0,.5}
+
+\author{Jasiek Marcinkowski}
+\title{Teoria Gier - wojna, rybołówstwo i sprawiedliwość w polityce.}
+\institute{Liceum Ogólnokształcące nr XIV we Wrocławiu}
+\date{5 maja 2009}
+\logo{\includegraphics[width=0.4cm]{logo}}
+\begin{document}
+	\begin{frame}
+	 \titlepage
+	\end{frame}
+	\begin{frame}
+	 \tableofcontents
+	\end{frame}
+
+	\section{Gry o sumie zerowej}
+		\subsection{O co chodzi?}
+		\begin{frame}
+			\frametitle{Gry o sumie zerowej}
+			\begin{enumerate}
+			 \item Grać będą dwie osoby. U nas nazywają się: pan Wiersz i pani Kolumna. Podejmują decyzje niezależnie i nie znają przed zagraniem decyzji przeciwnika.
+			 \item Gra się {\color{orange}bardzo dużo razy}, więc nie ma zbędnych elementów losowości.
+			 \item Suma zerowa oznacza, że jeśli Wiersz wygra $\nu$, to Kolumna dostanie $-\nu$. Dlatego wypłatą będziemy nazywać wynik pana Wiersza - pani Kolumna dąży więc do jak najmniejszych wypłat.
+			 \item Nasz przeciwnik jest {\color{orange}mega} inteligentny i potrafi sobie wymodelować logiczną z naszego punktu widzenia strategię, tak samo jak my jesteśmy w stanie to zrobić (w końcu też nam nic nie brakuje).
+			\end{enumerate}
+			
+			\pause
+			
+			\begin{block}{Tak będzie wyglądać nasza gra}
+				\begin{columns}
+					\begin{column}{0.6\textwidth}
+						\begin{center}
+						Pani Kolumna
+						\end{center}
+						Pan Wiersz
+						\begin{tabular}{c|cccc}
+						& A  & B  & C  & D  \\ \hline
+						A & 12 & -1 & 1  & 0  \\
+						B & 5  & 1  & 7  & -20 \\
+						C & 3  & 2  & 4  & 3   \\
+						D & -16 & 0 & 0 & 16 \\
+						\end{tabular}
+					\end{column}
+					\begin{column}{0.35\textwidth}
+						A, B, C i D to możliwe strategie - sposoby gry. Jeśli pan Wiersz zdecyduje się na B, zaś Kolumna na A, to wynikiem gry będzie 5.
+					\end{column}
+				\end{columns}
+			\end{block}
+		\end{frame}
+		
+		
+		\subsection{Strategie dominujące}
+		\begin{frame}
+			\frametitle{Strategie dominujące}
+			\begin{columns}
+				\begin{column}{0.6\textwidth}
+					\begin{center}
+						Pani Kolumna
+					\end{center}
+					Pan Wiersz
+					\begin{tabular}{c|cccc}
+						& A  & B  & \alert<2->{C}  & D  \\ \hline
+						A & 12 & -1 & \alert<2->{1}  & 0  \\
+						B & 5  & 1  & \alert<2->{7}  & -20 \\
+						C & 3  & 2  & \alert<2->{4}  & 3   \\
+						D & -16 & 0 & \alert<2->{0} & 16 \\
+					\end{tabular}
+				\end{column}
+				\pause
+				\begin{column}{0.35\textwidth}
+					\begin{alertblock}{Strategia C}
+						Mądra kolumna nigdy nie zagra strategi C, gdyż dla każdego zagrania Wiersza jest ona mniej opłacalna, niż odpowiadająca jej ze strategii B.
+					\end{alertblock}
+					\pause
+					\begin{block}{\textbf{Definicja}}
+						Strategia $S$ \textbf{dominuje} strategię $T$, jeśli każdy wynik dawany przez $S$ jest co najmniej równie korzystny, co odpowiedni wynik dawany przez $T$, a przynajmniej jeden wynik dawany przez $S$ jest bardziej korzystny niż odpowiedni wynik dawany przez $T$.
+					\end{block}
+				\end{column}
+			\end{columns}
+		\end{frame}	
+			
+		
+		\subsection{Punkt siodłowy i Strategie mieszane}
+		\begin{frame}
+			\frametitle{Wynik gry macierzowej}
+			\begin{block}{\textbf{Twierdzenie o Minimaksie}}
+				Każda gra macierzowa $m \times n$ ma rozwiązanie, tzn. istnieje dokładnie jedna liczba $\nu$ nazywana ,,wartością gry``, oraz optymalne strategie (czyste lub mieszane) obu graczy, takie że:
+				\begin{itemize}
+				 \item jeżeli Wiersz gra swoją optymalną strategię, to jego oczekiwana wypłata będzie większa lub równa $\nu$, niezależnie od tego, jaką strategię będzie grała Kolumna;
+				 \item jeżeli Kolumna gra swoją optymalną strategię, to oczekiwana wypłata Wiersza będzie mniejsza lub równa $\nu$, niezależnie od tego, jaką strategię będzie on grał.
+				\end{itemize}
+
+			\end{block}
+			\begin{itemize}
+			 \item Gracz stosuje strategię czystą, gdy za każdym razem wybiera tę samą możliwość;
+			 \item Strategia mieszana polega na wybieraniu różnych możliwości gry z określonymi prawdopodobieństwami. Mianem strategii określa się właśnie ten rozkład prawdopodobieństw;
+			 \item Oczekiwana wypłata dla wyników $a_1, a_2, \dots, a_n$ uzyskiwanych z prawdopodobieństwami odpowiednio $p_1, p_2, \dots, p_n$ jest liczba $a_1 * p_1 + a_2 * p_2 + \dots + a_n * p_n$.
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Punkt Siodłowy}
+			\begin{center}
+				\LARGE\color{darkmagenta}Powracamy do naszego przykładu gry macierzowej
+			\end{center}
+
+			\begin{columns}
+				\begin{column}{0.6\textwidth}
+					\begin{center}
+						Pani Kolumna
+					\end{center}
+					Pan Wiersz
+					\begin{tabular}{c|cccc}
+						& A  & B  & & D  \\ \hline
+						A & 12 & -1 &   & 0  \\
+						B & 5  & 1  &   & -20 \\
+						C & 3  & \alert<2->{2}  &   & 3   \\
+						D & -16 & 0 &  & 16 \\
+					\end{tabular}
+				\end{column}
+				\pause
+				\begin{column}{0.35\textwidth}
+					\only<-3>{\begin{alertblock}{Punkt Siodłowy}
+						Grając możliwość C pan Wiersz jest w stanie zapewnić sobie wynik nie gorszy niż 2, niezależnie od poczynań Kolumny\only<-2>{ (chyba że Kolumna kopnie w stół i powie, że się tak nie bawi)}. \only<3->{Także Kolumna może grając swoją strategię B zapewnić wynik o wartości najwyżej B.}
+					\end{alertblock}}
+					
+					\only<4->{\begin{block}{\textbf{Definicja}}
+						Wynik gry macierzowej nazywamy punktem siodłowym, jeżeli jego wartość jest mniejsza lub równa każdaj wartości w jego wierszu, a większa lub równa każdej wartości w jego kolumnie.
+					\end{block}}
+					
+					\only<5>{\begin{block}{\textbf{Kryterium Punktu Siodłowego}}
+						Jeśli gra ma punkt siodłowy, to należy grać strategię go zawierającą.
+					\end{block}}
+				\end{column}
+			\end{columns}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Strategie mieszane w grach macierzowych $2 \times 2$}
+			\begin{block}{}
+			 	Fajna jest dla nas taka strategia, której przeciwnik nie może wykorzystać przeciwko nam, nawet jeśli ją pozna. 
+			\end{block}
+			\pause
+			\begin{block}{}
+			 	Zróbmy sobie strategię niezniszczalną. Będzie dawała takie same wyniki niezależnie od ruchów przeciwnika
+			\end{block}
+
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Fajna metoda dla gier $2 \times n$}
+			\begin{columns}
+				\begin{column}{0.45\textwidth}
+					\begin{center}
+						\LARGE\color{navyblue}z macierzy
+					\end{center}
+					\begin{center}
+						Pani Kolumna
+					\end{center}
+					Pan Wiersz
+					\begin{tabular}{c|cc}
+						  & A  & B   \\ \hline
+						A & 2  & -3  \\
+						B & 0  & 2   \\
+						C & -5 & 10  \\
+					\end{tabular}
+				\end{column}
+				
+				\begin{column}{0.45\textwidth}
+					\begin{center}
+						zróbmy \LARGE\color{orange} wykresik
+					\end{center}
+					%\includegraphics{img/tower1}
+				\end{column}
+			\end{columns}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Co pozwala nam rozszerzyć twierdzenie o minimaksie}
+			\begin{block}{\textbf{Twierdzenie o Minimaksie}}
+				Każda gra macierzowa $m \times n$ ma rozwiązanie, tzn. istnieje dokładnie jedna liczba $\nu$ nazywana ,,wartością gry``, oraz optymalne strategie (czyste lub mieszane) obu graczy, takie że:
+				\begin{itemize}
+				 \item jeżeli Wiersz gra swoją optymalną strategię, to jego oczekiwana wypłata będzie większa lub równa $\nu$, niezależnie od tego, jaką strategię będzie grała Kolumna;
+				 \item jeżeli Kolumna gra swoją optymalną strategię, to oczekiwana wypłata Wiersza będzie mniejsza lub równa $\nu$, niezależnie od tego, jaką strategię będzie on grał.
+				\end{itemize}
+
+			\end{block}
+			\only<1>{\begin{itemize}
+			 \item Gracz stosuje strategię czystą, gdy za każdym razem wybiera tę samą możliwość;
+			 \item Strategia mieszana polega na wybieraniu różnych możliwości gry z określonymi prawdopodobieństwami. Mianem strategii określa się właśnie ten rozkład prawdopodobieństw;
+			 \item Oczekiwana wypłata dla wyników $a_1, a_2, \dots, a_n$ uzyskiwanych z prawdopodobieństwami odpowiednio $p_1, p_2, \dots, p_n$ jest liczba $a_1 * p_1 + a_2 * p_2 + \dots + a_n * p_n$.
+			\end{itemize}}
+			\only<2>{\begin{alertblock}{Ponadto}
+				Rozwiązanie gry macierzowej $m \times n$ jest zawsze rozwiązaniem jakiejś podgry $k \times k$.
+			\end{alertblock}}
+		\end{frame}
+		
+
+		\subsection{Bolączki gier o sumie zerowej}
+		\begin{frame}
+			\frametitle{Bolączki gier o sumie zerowej}
+			\begin{enumerate}
+				\item Ciężko gra się z bogiem.
+				\item Przeciwnik na wojnie niekoniecznie ma zupełnie odmienne niż my cele.
+				\item Natura (cholera jedna) nie chce grać optymalnie.
+			\end{enumerate}	
+		\end{frame}
+		\subsection{Gry o sumie stałej}
+		\begin{frame}
+			\frametitle{Gry o sumie stałej}
+			\begin{center}
+				Pani Kolumna
+			\end{center}
+				\hspace{1.6cm}Pan Wiersz
+				\begin{tabular}{c|cc}
+					  & A  & B   \\ \hline
+					A & (2, -188)  & (-3, 312)  \\
+					B & (0, 12)  & (2, -188)   \\
+					C & (-5, 512) & (10, -988)  \\
+				\end{tabular}
+		\end{frame}
+
+	\section{Gry osobowe o sumie niezerowej}
+		\subsection{Podobieństwa i różnice do gier o sumie zerowej}
+		\begin{frame}
+			\frametitle{Podobieństwa i różnice do gier o sumie zerowej}
+			\begin{center}
+				\LARGE\color{darkmagenta}Podobieństwa
+			\end{center}
+			\begin{itemize}
+				\item[+] Istnieje dominacja jednych strategii nad innymi
+				\item[+] Istnieją strategie wyrównujące i punkty równowagi
+			 \end{itemize}
+			 
+			\begin{center}
+				\LARGE\color{darkmagenta}Różnice
+			\end{center}
+			\begin{itemize}
+				\item[--] Punkty równowagi nie są \textit{wymienne} i \textit{ekwiwalentne}
+				\item[--] To że istnieją jest jedną z niewielu zalet tych punktów równowagi. Nie są efektywne w sensie Pareto (o tym za chwilę)
+			\end{itemize}
+		\end{frame}
+		
+		
+		\subsection{Równowaga Nasha}
+		\begin{frame}
+			\frametitle{Równowaga Nasha}
+			\begin{block}{Strategie wyrównujące}
+				Strategia wyrównująca, to strategia, która czyni wypłatę przeciwnika niezależną od jego poczynań.
+				Jeśli zarówno pan Wiersz, jak i pani Kolumna zadecydują się na zastosowanie strategii Wyrównującej, to jest to stan równowagi - żadnemu nie opłaca się zmiana strategii. Równowaga ta nazywa się \textbf{Równowagą Nasha}, gdyż to John Nash udowodnił, że każda gra o sumie niezerowej ma przynajmniej jedną taką równowagę.
+			\end{block}
+			\pause
+			\begin{block}{Optymalność w sensie Pareto}
+				Wynik gry jest \textbf{nieefektywny Pareto}, gdy gra ma inny wynik, dający obu graczom wyższe wypłaty (ewentualnie jednemu taką samą).
+			\end{block}
+			\only<3>{
+ 				\begin{exampleblock}{Przykład}
+					\begin{columns}
+						\begin{column}{0.45\textwidth}
+							\begin{center}
+								\hspace{10mm} Pani Kolumna
+							\end{center}
+							Pan Wiersz
+							\begin{tabular}{c|cc}
+								& A  & B   \\ \hline
+								A & (3, 3)  & (-1, 5)  \\
+								B & (5, -1)  & (0, 0)   \\
+							\end{tabular}
+						\end{column}
+					\end{columns}
+ 				\end{exampleblock}
+			}
+ 		\end{frame}
+ 		\subsection{I co teraz zrobimy?}
+ 		\begin{frame}
+ 			\frametitle{I co teraz zrobimy?}
+ 			\begin{columns}
+				\begin{column}{0.45\textwidth}
+					\begin{alertblock}{Postulat}
+						Niech Wiersz zajmie się swoimi wypłatami, a nie zagląda do portfela kolumny.
+						No i Kolumna też nos w sos!
+					\end{alertblock}
+					\pause
+					\begin{block}{Definicja}
+						Nazwijmy \textbf{strategią bezpieczną} Wiersza, strategię optymalną (minimaksową) w jego grze. Wartość gry Wiersza niech się zowie \textbf{poziomem bezpieczeństwa}.
+					\end{block}
+					\pause
+				\end{column}
+				\begin{column}{0.45\textwidth}\only<3>{
+					\begin{center}
+						\color{darkmagenta}Ale zaraz za nią podąży następna...
+					\end{center}
+					\begin{block}{Definicja}
+						Nazwijmy \textbf{strategią kontrabezpieczną} strategię będącą najlepszą odpowiedzią na strategię bezpieczną.
+					\end{block}}
+				\end{column}
+			\end{columns}
+ 		\end{frame}
+ 		\begin{frame}
+ 			\frametitle{Wnioski są smutne}
+ 			\color{navyblue}Niestety nie da się przenieść teorii gier o sumie zerowej na tę, o sumie niezerowej. \only<2>{W sensowny sposób...}
+ 			\only<3>{\begin{itemize}\item Możemy się jeszcze spróbować pocieszyć faktem, iż gry z równowagą optymalną w sensie Pareto są rozwiązywalne.\end{itemize}}
+ 		\end{frame}
+	\section{Sprawiedliwa ordynacja wyborcza}
+		\subsection{Idee}
+		\begin{frame}
+			\frametitle{Pomysły na obliczanie siły}
+			\begin{center}
+				\color{darkmagenta}Pomysły - kiedy ordynacja jest sprawiedliwa?
+			\end{center}
+			\begin{enumerate}
+			 \item Głos każdej partii liczy się tak samo.
+			 \item Gdy siła partii zależy od liczby jej reprezentantów (proporcjonalna).
+			 \item Doklejamy po kolei partie do koalicji. Gdy partia X uczyni koalicję wygrywającą - dajemy jej punkt \textit{(Indeks siły Shapleya-Shubika)}.
+			 \item Gdy partia ma głos krytyczny (przesądzający) dajemy jej punkt \textit{(Indeks siły Banzhafa)}.
+			\end{enumerate}
+
+		\end{frame}
+
+	\begin{frame}
+		\begin{center}
+			\LARGE\color{navyblue}Koniec i bomba, a kto słuchał, ten trąba.
+		\end{center}
+	\end{frame}
+\end{document}
